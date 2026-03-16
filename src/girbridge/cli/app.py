@@ -1,6 +1,7 @@
 import typer
 
 from girbridge.cli.draft_mapping import draft_mapping_command
+from girbridge.cli.generate_code_prompt import generate_code_prompt_command
 
 app = typer.Typer(help="GIRBridge CLI - Tools for OECD GIR mapping and transformation.")
 
@@ -11,3 +12,4 @@ def main() -> None:
 
 
 app.command("draft-mapping")(draft_mapping_command)
+app.command("generate-code-prompt")(generate_code_prompt_command)

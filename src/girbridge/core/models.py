@@ -25,3 +25,7 @@ class MappingDocument(BaseModel):
 
 class DraftMappingPromptResult(BaseModel):
     output_prompt_path: Path
+
+
+class GenerateCodePromptResult(BaseModel):
+    output_prompt_path: Path
