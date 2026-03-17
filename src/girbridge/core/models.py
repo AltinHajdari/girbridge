@@ -29,3 +29,11 @@ class DraftMappingPromptResult(BaseModel):
 
 class GenerateCodePromptResult(BaseModel):
     output_prompt_path: Path
+
+
+class MappingDiffResult(BaseModel):
+    output_delta_path: Path
+    output_report_path: Path
+    added_count: int
+    removed_count: int
+    changed_count: int
