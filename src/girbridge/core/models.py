@@ -37,3 +37,11 @@ class MappingDiffResult(BaseModel):
     added_count: int
     removed_count: int
     changed_count: int
+
+
+class XmlValidationResult(BaseModel):
+    is_valid: bool
+    xml_path: Path
+    schema_path: Path | None = None
+    errors: list[str] = Field(default_factory=list)
+    report_path: Path | None = None

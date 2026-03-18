@@ -1,6 +1,11 @@
 from pathlib import Path
 
-from girbridge.core.models import DraftMappingPromptResult, MappingDocument, MappingField
+from girbridge.core.models import (
+    DraftMappingPromptResult,
+    MappingDocument,
+    MappingField,
+    XmlValidationResult,
+)
 
 
 def test_mapping_field_defaults() -> None:
@@ -21,3 +26,11 @@ def test_mapping_document_defaults() -> None:
 def test_draft_mapping_prompt_result_holds_path() -> None:
     result = DraftMappingPromptResult(output_prompt_path=Path("output/prompt.txt"))
     assert result.output_prompt_path == Path("output/prompt.txt")
+
+
+def test_xml_validation_result_defaults() -> None:
+    result = XmlValidationResult(is_valid=True, xml_path=Path("output.xml"))
+    assert result.is_valid is True
+    assert result.xml_path == Path("output.xml")
+    assert result.schema_path is None
+    assert result.errors == []
